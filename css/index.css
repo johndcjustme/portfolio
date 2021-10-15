@@ -110,11 +110,11 @@ textarea {
 }
 
 .me-name {
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 
-.me-mytitle {
-  letter-spacing: 0.3em;
+.me-mytitle 
+  letter-spacing: 0.2em;
 }
 
 .nav-bar {
@@ -133,7 +133,6 @@ textarea {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-right: 10px;
 }
 .nav-bar .nav-container-outer > div.nav-container {
   box-shadow: 0 0 10px 10px rgba(39, 39, 39, 0.171);
