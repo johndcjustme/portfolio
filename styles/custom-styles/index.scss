@@ -1,0 +1,51 @@
+:root {
+    --border-radius: 0.25rem;
+}
+
+.headings-reversed {
+    > * {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.text {
+    &-center {
+        text-align: center;
+    }
+    &-end {
+        text-align: right;
+    }
+}
+
+.full {
+    &-vh {
+        height: 100vh;
+    }
+}
+
+.h {
+    &-80vh {
+        height: 90vh;
+    }
+}
+
+
+section {
+    margin-bottom: 6rem;
+}
+
+.section-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+    span {
+        color: rgba(255, 255, 255, 0.274);
+    }
+}
+
+.border-left {
+    border-left: 1px solid white;
+}
