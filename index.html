@@ -7,90 +7,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/pico-master/css/pico.min.css">
     <link rel="stylesheet" href="styles/custom-styles/index.css">
-    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"rel="stylesheet">
+
+
+    <title>John Dc | Portfolio</title> 
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    
+    <style>
+        html {
+            font-family: 'Inter';
+        }
+    
+        .switcher {
+                position: fixed;
+                right: calc(var(--spacing)/ 2 + var(--scrollbar-width, 0px));
+                bottom: var(--spacing);
+                width: auto;
+                margin-bottom: 0;
+                padding: .75rem;
+                border-radius: 2rem;
+                box-shadow: var(--card-box-shadow);
+                line-height: 1;
+                text-align: right
+            }
+    
+            .switcher::after {
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                border: .15rem solid currentColor;
+                border-radius: 50%;
+                background: linear-gradient(to right, currentColor 0, currentColor 50%, transparent 50%);
+                content: "";
+                vertical-align: bottom;
+                transition: transform var(--transition)
+            }
+    
+            .switcher i {
+                display: inline-block;
+                max-width: 0;
+                padding: 0;
+                overflow: hidden;
+                font-style: normal;
+                font-size: .875rem;
+                white-space: nowrap
+            }
+    
+            .switcher:focus,
+            .switcher:hover {
+                max-width: 100%;
+                transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition)
+            }
+    
+            .switcher:hover::after {
+                transform: rotate(180deg)
+            }
+    
+            .switcher:hover i {
+                max-width: 100%;
+                padding: 0 calc(var(--spacing)/ 2) 0 calc(var(--spacing)/ 4);
+                transition: max-width var(--transition), padding var(--transition)
+            }
+    
+            .switcher:focus {
+                box-shadow: var(--card-box-shadow), 0 0 0 .2rem var(--secondary-focus)
+            }
+    
+            @media (min-width:576px) {
+                .switcher {
+                    right: calc(var(--spacing) + var(--scrollbar-width, 0px))
+            }
+        }
+    
+    
+    </style>
 </head>
 
 
 
-<style>
-
-
-    .switcher {
-            position: fixed;
-            right: calc(var(--spacing)/ 2 + var(--scrollbar-width, 0px));
-            bottom: var(--spacing);
-            width: auto;
-            margin-bottom: 0;
-            padding: .75rem;
-            border-radius: 2rem;
-            box-shadow: var(--card-box-shadow);
-            line-height: 1;
-            text-align: right
-        }
-
-        .switcher::after {
-            display: inline-block;
-            width: 1rem;
-            height: 1rem;
-            border: .15rem solid currentColor;
-            border-radius: 50%;
-            background: linear-gradient(to right, currentColor 0, currentColor 50%, transparent 50%);
-            content: "";
-            vertical-align: bottom;
-            transition: transform var(--transition)
-        }
-
-        .switcher i {
-            display: inline-block;
-            max-width: 0;
-            padding: 0;
-            overflow: hidden;
-            font-style: normal;
-            font-size: .875rem;
-            white-space: nowrap
-        }
-
-        .switcher:focus,
-        .switcher:hover {
-            max-width: 100%;
-            transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition)
-        }
-
-        .switcher:hover::after {
-            transform: rotate(180deg)
-        }
-
-        .switcher:hover i {
-            max-width: 100%;
-            padding: 0 calc(var(--spacing)/ 2) 0 calc(var(--spacing)/ 4);
-            transition: max-width var(--transition), padding var(--transition)
-        }
-
-        .switcher:focus {
-            box-shadow: var(--card-box-shadow), 0 0 0 .2rem var(--secondary-focus)
-        }
-
-        @media (min-width:576px) {
-            .switcher {
-                right: calc(var(--spacing) + var(--scrollbar-width, 0px))
-        }
-    }
-
-
-</style>
 
 <body>
     <nav class="container-fluid">
         <ul>
-            <li><a href="https://picocss.com" aria-label="Back home">
+            <li><a href="https://github.com/johndcjustme/portfolio/#home" aria-label="Back home">
                     <b>JD</b>
                 </a>
             </li>
         </ul>
         <ul>
-            <li><a href="https://picocss.com#examples" class="secondary">Examples</a></li>
-            <li><a href="./" class="secondary">Docs</a></li>
-            <li><a href="https://github.com/picocss/pico" class="contrast" aria-label="Pico GitHub repository"><svg
+            <li><a href="https://github.com/johndcjustme/portfolio" class="contrast" aria-label="Pico GitHub repository"><svg
                         aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 496 512" height="16px">
                         <path fill="currentColor"
@@ -103,121 +111,116 @@
     </nav>
 
     <div class="container">
+
+
         <section class="section-hero">
             <div class="text-center">
                 <div class="headings-reversed">
                     <p><code>Hi there, I am John!</code></p>
-                    <h2>< Web Developer /></h2>
+                    <h1>< Web Developer /></h1>
                 </div>
+                <p>I love Simple, Clean and Unique design. <a href="">Download CV</a></p>                
                 <br><br>
-                <p>I love Simple, Clean and Unique design. <a href="">Download CV</a></p>
-                <!-- <code>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quia corporis maxime.</code>
-                <code>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, ut.</code> -->
-
-
-                
             </div>
         </section>
 
+
         <section>
-            <div class="headings-reversed">
-                <p>My Computing</p>
+            <div class="headings-reversed text-center"> 
+                <p>A little</p>
+                <h2>About Me</h2>
+            </div>
+            <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus laborum consequatur nemo esse ad voluptatum asperiores explicabo fugit quidem alias deserunt, accusamus quos neque sapiente excepturi. Dolores, libero consequuntur!</p>
+        </section>
+
+
+
+        <section>
+            <div class="headings-reversed text-center"> 
+                <p>Computing</p>
                 <h2>Skills</h2>
             </div>
 
-            <br><br>
-
-            <div class="grid">
-                <div>
+            <div class="grid" x-data="computingSkills()">
+                <template x-for="skill in skills">
                     <ul>
-                        <li><code>PHP | Laravel</code></li>
-                        <li><code>C# | ASP.NET Core</code></li>
-                        <li><code>JavaScript | React JS</code></li>
-                        <li><code>SQL Server | SQLite | MySql</code></li>
-                        <li><code>Git | Github</code></li>
+                        <template x-for="list in skill">
+                            <li><code x-text="list"></code></li>
+                        </template>                          
                     </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><code>PHP | Laravel</code></li>
-                        <li><code>C# | ASP.NET Core</code></li>
-                        <li><code>JavaScript | React JS</code></li>
-                        <li><code>SQL Server | SQLite | MySql</code></li>
-                        <li><code>Git | Github</code></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><code>PHP | Laravel</code></li>
-                        <li><code>C# | ASP.NET Core</code></li>
-                        <li><code>JavaScript | React JS</code></li>
-                        <li><code>SQL Server | SQLite | MySql</code></li>
-                        <li><code>Git | Github</code></li>
-                    </ul>
-                </div>
+                </template>
             </div>
         </section>
+
 
 
         <section>
-            <div class="headings-reversed">
+            <div class="headings-reversed text-center"> 
                 <p>Featured</p>
                 <h2>Projects</h2>
             </div>
-
-            <div class="grid">
-                <article>
-                    <hgroup>
-                        <h4>My Project 1</h4>
-                        <p>Hello World</p>
-                    </hgroup>
-                    <a href="#" role="button" class="outline">View Project</a>
-                </article>
-        
-                <article>
-                    <hgroup>
-                        <h4>My Project 2</h4>
-                        <p>Hello World</p>
-                    </hgroup>
-                    <a href="#" role="button" class="outline">View Project</a>
-                </article>
-        
-                <article>
-                    <hgroup>
-                        <h4>My Project 3</h4>
-                        <p>Hello World</p>
-                    </hgroup>
-                    <a href="#" role="button" class="outline">View Project</a>
-                </article>
+            <div class="grid" x-data="featuredProjects()">
+                <template x-for="project in projects">
+                    <article style="margin: 1rem 0;">
+                        <hgroup>
+                            <h4 x-text="project.title"></h4>
+                            <p x-text="project.description"></p>
+                        </hgroup>
+                        <a x-bind:href="project.url">View Project</a>
+                    </article>
+                </template>
             </div>
         </section>
+
+
+
+
+        <section>
+            <div class="headings-reversed text-center"> 
+                <p>My Client's</p>
+                <h2>Testimony</h2>
+            </div>
+            <div class="grid" x-data="testimonials()">
+                <template x-for="testimonial in testimonials">
+                    <article style="margin: 1rem 0;">
+                        <p x-text="testimonial.testimonial"></p>
+                        <b x-text="testimonial.name"></b><br>
+                        <small x-text="testimonial.title"></small>
+                    </article>
+                </template>
+            </div>
+        </section>
+
 
 
         <section class="section-contact">
             <div class="headings-reversed text-center">
-                <p>Send me a</p>
-                <h2>Message</h2>
+                <p>Wan't to build a project with me?</p>
+                <h2>Message Me</h2>
             </div>
 
-            <br><br>
             <div class="grid">
                 <div></div>
-                <div style="display: flex; justify-content:center;">
-                    <form style="width: 30em;">                     
-                        <label for="email">Email address</label>
-                        <input type="email" id="email" name="email" placeholder="Email address" required>
-                        <label for="message">Message</label>
-                        <textarea name="" id="message" cols="30" rows="3" placeholder="Message"></textarea>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
+                <form>                     
+                    <input type="email" id="email" name="email" placeholder="Email address" required>
+                    <textarea name="" id="message" cols="30" rows="3" placeholder="Your message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
                 <div></div>
             </div>
+
+            <br>
+
+            <p class="text-center">
+                or reach me in your favoured time <br>
+                <a>johndecastro.604@gmail.com</a> | <a href="">(+63) 09512558697</a>
+            </p>
+
         </section>        
     </div>
 
     <footer class="container">
-        <small>Alright Reserved <a href="https://picocss.com">Pico</a> • <a href="https://github.com/picocss/examples/tree/master/company/">Source code</a></small>
+        <small>Made and Customized with <a href="https://picocss.com">Pico</a> • <a href="#">Source code</a></small>
 <!--         
         <div class="text-center">
             <h5>or contact me anytime.</h5>
@@ -238,6 +241,58 @@
     <div class="switcher"></div>
     <script type="module" src="js/commons.js"></script>
 
-</body>
 
+    <script>
+        computingSkills = () => {
+            return { skills: [
+                [
+                    'HTML 5 | CSS3 | SCSS',
+                ], [
+                    'PHP | Laravel | Livewire', 
+                    'C# | ASP.NET Core', 
+                ], [
+                    'MySQL | SQL Server | SQLite',    
+                ]
+            ]};
+        }
+    
+        featuredProjects = () => {
+            return { projects: [
+                {
+                    title: 'Project 1',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                    url: '#'
+                },  {
+                    title: 'Project 2',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                    url: '#'
+                }, {
+                    title: 'Project 3',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                    url: '#'
+                }
+            ]}
+        }
+
+        testimonials = () => {
+            return { testimonials: [
+                {
+                    name: 'John Doe',
+                    title: 'Company CEO',
+                    testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                },  {
+                    name: 'Vhelmar Fernandez',
+                    title: 'Company CEO',
+                    testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                }, {
+                    name: 'Ivan Conrad Jumanoy',
+                    title: 'Company CEO',
+                    testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                }
+            ]}
+        }
+    
+        
+    </script>
+</body>
 </html>
