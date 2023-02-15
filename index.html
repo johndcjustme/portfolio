@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -10,20 +10,87 @@
     <title>Document</title>
 </head>
 
+
+
+<style>
+
+
+.switcher {
+            position: fixed;
+            right: calc(var(--spacing)/ 2 + var(--scrollbar-width, 0px));
+            bottom: var(--spacing);
+            width: auto;
+            margin-bottom: 0;
+            padding: .75rem;
+            border-radius: 2rem;
+            box-shadow: var(--card-box-shadow);
+            line-height: 1;
+            text-align: right
+        }
+
+        .switcher::after {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border: .15rem solid currentColor;
+            border-radius: 50%;
+            background: linear-gradient(to right, currentColor 0, currentColor 50%, transparent 50%);
+            content: "";
+            vertical-align: bottom;
+            transition: transform var(--transition)
+        }
+
+        .switcher i {
+            display: inline-block;
+            max-width: 0;
+            padding: 0;
+            overflow: hidden;
+            font-style: normal;
+            font-size: .875rem;
+            white-space: nowrap
+        }
+
+        .switcher:focus,
+        .switcher:hover {
+            max-width: 100%;
+            transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition)
+        }
+
+        .switcher:hover::after {
+            transform: rotate(180deg)
+        }
+
+        .switcher:hover i {
+            max-width: 100%;
+            padding: 0 calc(var(--spacing)/ 2) 0 calc(var(--spacing)/ 4);
+            transition: max-width var(--transition), padding var(--transition)
+        }
+
+        .switcher:focus {
+            box-shadow: var(--card-box-shadow), 0 0 0 .2rem var(--secondary-focus)
+        }
+
+        @media (min-width:576px) {
+            .switcher {
+                right: calc(var(--spacing) + var(--scrollbar-width, 0px))
+            }
+        }
+
+
+</style>
+
 <body>
     <nav class="container-fluid">
         <ul>
-            <li><a href="https://picocss.com" aria-label="Back home"><svg aria-hidden="true" focusable="false"
-                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" height="56px">
-                        <path fill="currentColor"
-                            d="M633.43 429.23c0 118.38-49.76 184.72-138.87 184.72-53 0-92.04-25.37-108.62-67.32h-2.6v203.12H250V249.7h133.67v64.72h2.28c17.24-43.9 55.3-69.92 107-69.92 90.4 0 140.48 66.02 140.48 184.73zm-136.6 0c0-49.76-22.1-81.96-56.9-81.96s-56.9 32.2-57.24 82.28c.33 50.4 22.1 81.63 57.24 81.63 35.12 0 56.9-31.87 56.9-81.95zM682.5 547.5c0-37.32 30.18-67.5 67.5-67.5s67.5 30.18 67.5 67.5S787.32 615 750 615s-67.5-30.18-67.5-67.5z">
-                        </path>
-                    </svg>
+            <li><a href="https://picocss.com" aria-label="Back home">
+                    <b>JD</b>
                 </a>
             </li>
         </ul>
         <ul>
-            <li><a href="https://github.com/jodcjustme/portfolio" class="contrast" aria-label="My GitHub repository"><svg
+            <li><a href="https://picocss.com#examples" class="secondary">Examples</a></li>
+            <li><a href="./" class="secondary">Docs</a></li>
+            <li><a href="https://github.com/picocss/pico" class="contrast" aria-label="Pico GitHub repository"><svg
                         aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 496 512" height="16px">
                         <path fill="currentColor"
@@ -150,7 +217,7 @@
     </div>
 
     <footer class="container">
-        <small>Alright Reserved <a href="https://picocss.com">Pico</a> • <a href="https://github.com/johndcjustme/portfolio">Source code</a></small>
+        <small>Alright Reserved <a href="https://picocss.com">Pico</a> • <a href="https://github.com/picocss/examples/tree/master/company/">Source code</a></small>
 <!--         
         <div class="text-center">
             <h5>or contact me anytime.</h5>
@@ -166,6 +233,11 @@
             <p>09484710737</p>
         </div> -->
     </footer>
+
+
+    <div class="switcher"></div>
+    <script type="module" src="js/commons.js"></script>
+
 </body>
 
 </html>
