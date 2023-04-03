@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./static/vendor/alphine/alphinev3.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     <link rel="stylesheet" href="./static/vendor/bootstrap/scss/bootstrap-custom.css">
@@ -18,45 +18,62 @@
         .container { max-width: 61rem; }
     </style>
 
-    <script>
+    <script>        
+        function sectionTextContent() {
+            return {
+                section: {                    
+                    hero: {
+                        greeting: 'Hello there,</span> <span class="text-danger">I\'m John.</span>',
+                        career: 'Web Developer',
+                        description: 'I am a <b><u>Junior Web Developer</u></b>  with a passion for creating beautiful and functional websites. My goal is to create websites that not only look great but also provide a seamless user experiece.'
+                    },
+                    aboutme: 'I\'ve always been interested in technology and programming, and I\'ve worked hard to develop my skills as web a developer. I\'m always eager to take on new challenges and expand my knowledge. <br><br> In my free time, I enjoy [hobbies/interests] and I\'m always seeking out new ways to grow and challenge myself. I\'m always excited for the opportunity to work with minded people and bring ideas to life.',
+                    contact: {
+                        title: 'Say hi to John',
+                        description: 'I would love to hear from you. Whether it’s a project, a job opportunity, or just a chat. Feel free to contact me.'
+                    },
+                }
+            }
+        }
+
         function projects() {
             return {
                 projects: [
                 {
-                    title: 'Optical Clinic Management System with Anaylytics',
-                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere laudantium aliquid illum nisi unde? Eveniet accusamus consectetur.',
+                    title: 'Optical Clinic Management System with Analytics',
+                    description: 'This project has several features such as managing patient\'s information, inventory, orders, data analytics, payments and more.',
                     repo: 'google.com',
+                    tags: [
+                        'Laravel', 'Livewire', 'MySql'
+                    ],
                     screenshots: [
                         './static/projects/clinic/dashboard.png',
                         './static/projects/clinic/patient.png',                                      
                         './static/projects/clinic/inventory.png'                   
-                    ],
-                    tags: [
-                        'laravel', 'livewire'
                     ]
                 }, {
                     title: 'Content Management System',
-                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere laudantium aliquid illum nisi unde? Eveniet accusamus consectetur quod.',
+                    description: 'This project allows user to manage posts like blogs, News, Events and more features.',
                     repo: 'google.com',
+                    tags: [
+                        'ASP.NET Core', 'SQL Server', 'JQuery'
+                    ],
                     screenshots: [
                         './static/projects/clinic/dashboard.png',
                         './static/projects/clinic/dashboard.png',
                         './static/projects/clinic/dashboard.png'
-                    ],
-                    tags: [
-                        'laravel', 'livewire'
                     ]
                 }, {
                     title: 'Portfolio',
-                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere laudantium aliquid illum nisi unde? Eveniet accusamus consectetur quod.',
+                    description: 'A responsive and minimalist website developer portfolio that showcases projects and skills.',
                     repo: 'google.com',
+                    tags: [
+                        'Bootstrap 5', 'Alphine JS',
+                    ],
                     screenshots: [
                         './static/projects/portfolio/hero.png',
                         './static/projects/portfolio/projects.png',
                         './static/projects/portfolio/about.png'
-                    ],
-                    tags: [
-                        'laravel', 'livewire'
                     ]
                 }
             ]}
@@ -66,60 +83,48 @@
             return {
                 skills: [
                     {
-                        column: [
-                            {
-                                icon: 'devicon-html5-plain',
-                                title: 'HTML 5'
-                            }, {
-                                icon: 'devicon-css3-plain',
-                                title: 'CSS 3'
-                            }, {
-                                icon: 'devicon-sass-plain',
-                                title: 'Scss'
-                            },  {
-                                icon: 'devicon-javascript-plain',
-                                title: 'JavaScript'
-                            }
-                        ]
+                        icon: 'devicon-html5-plain',
+                        title: 'HTML 5'
                     }, {
-                        column: [
-                            {
-                                icon: 'devicon-bootstrap-plain',
-                                title: 'Bootstrap'
-                            }, {
-                                icon: 'devicon-tailwindcss-plain',
-                                title: 'Tailwind'
-                            }, {
-                                icon: 'devicon-jquery-plain',
-                                title: 'JQuery'
-                            },  {
-                                icon: 'devicon-svelte-plain',
-                                title: 'Svelte'
-                            }
-                        ]
+                        icon: 'devicon-css3-plain',
+                        title: 'CSS 3'
                     }, {
-                        column: [
-                            {
-                                icon: 'devicon-laravel-plain',
-                                title: 'Laravel'
-                            }, {
-                                icon: 'devicon-dotnetcore-plain',
-                                title: '.NET Core'
-                            },{
-                                icon: 'devicon-mysql-plain',
-                                title: 'MySql'
-                            }, {
-                                icon: 'devicon-microsoftsqlserver-plain',
-                                title: 'SQL Server'
-                            }
-                        ]
+                        icon: 'devicon-sass-plain',
+                        title: 'Scss'
+                    },  {
+                        icon: 'devicon-javascript-plain',
+                        title: 'JavaScript'
+                    }, {
+                        icon: 'devicon-bootstrap-plain',
+                        title: 'Bootstrap'
+                    }, {
+                        icon: 'devicon-tailwindcss-plain',
+                        title: 'Tailwind'
+                    }, {
+                        icon: 'devicon-jquery-plain',
+                        title: 'JQuery'
+                    },  {
+                        icon: 'devicon-svelte-plain',
+                        title: 'Svelte'
+                    }, {
+                        icon: 'devicon-laravel-plain',
+                        title: 'Laravel'
+                    }, {
+                        icon: 'devicon-dotnetcore-plain',
+                        title: '.NET Core'
+                    },{
+                        icon: 'devicon-mysql-plain',
+                        title: 'MySql'
+                    }, {
+                        icon: 'devicon-microsoftsqlserver-plain',
+                        title: 'SQL Server'
                     }
                 ]
             }
         }
     </script>
 </head>
-<body>
+<body x-data="sectionTextContent()">
     <div>
         <!-- header  -->
         <div class="position-fixed start-0 end-0 top-0 p-3 bg-body" style="z-index: 3; box-shadow: 0px 10px 15px #212529;">
@@ -135,14 +140,13 @@
 
         <!-- hero -->
         <section class="py-5 px-3 vh-100 mb-5">
-          
             <div class="container d-flex flex-column justify-content-between gap-5 h-100">
                 <div></div>
                 <div>
                     <div>
-                        <h2><span class="text-muted">Hello there,</span> <span class="text-danger">I'm John.</span></h2>
-                        <h1 class="fw-bold" style="font-size:3.7rem">Web Developer</h1>
-                        <p class="lead text-muted" style="font-size: 1.5rem;">I am a frontend software engineer, currently focused on building beautiful web interfaces and web applications at</p>
+                        <h2><span class="text-muted" x-html="section.hero.greeting"></h2>
+                        <h1 class="fw-bold" style="font-size:3.7rem" x-text="section.hero.career"></h1>
+                        <p class="lead text-muted" style="font-size: 1.5rem;" x-html="section.hero.description"></p>
                     </div>
                     <div class="d-flex gap-4 mt-5">
                         <a href="#section-projects" class="btn btn-lg btn-primary">Projects <i class="bi bi-arrow-down"></i></a>
@@ -165,15 +169,17 @@
 
                 <template x-for="(project, index) in projects">
                     <div class="row g-5 mb-5 pb-5">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-between">
                             <div>
-                                <h3 class="fw-bold" x-text="project.title"></h3>
-                                <p class="text-muted" x-text="project.description"></p>
-                            </div>
-                            <div class="d-flex flex-wrap gap-3 my-4">
-                                <template x-for="tag in project.tags">
-                                    <a class="text-muted opacity-50 text-decoration-none" href="#" x-text="'#' + tag"></a>
-                                </template>
+                                <div>
+                                    <h3 class="fw-bold" x-text="project.title"></h3>
+                                    <p class="text-muted" x-text="project.description"></p>
+                                </div>
+                                <div class="d-flex flex-wrap gap-3 my-4">
+                                    <template x-for="tag in project.tags">
+                                        <a class="text-muted opacity-50 text-decoration-none" href="#" x-text="'#' + tag"></a>
+                                    </template>
+                                </div>
                             </div>
                             <div>
                                 <a x-bind:href="project.repo" target="_blank" class="link-primary fs-5 text-decoration-none"><i class="bi bi-github"></i> Code repo</a>
@@ -218,31 +224,31 @@
                 <h5 class="section-title border-bottom mb-5 pb-3">About Me</h5>
                 <div class="row g-5">
                     <div class="col-sm-12 col-md-6">
-                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptas fuga suscipit qui officiis nulla nihil. Ad fugiat similique, eos architecto libero sapiente, doloremque beatae dignissimos pariatur, itaque praesentium obcaecati?</p>
+                        <p class="text-muted" x-html="section.aboutme"></p>
                         <p class="lead">Technologies that I've been working with.</p>
 
                         <!-- skills  -->
-                        <div class="row g-4">
-                            <template x-for="skillz in skills">
-                                <div class="col-sm-4">
-                                    <template x-for="columns in skillz">
-                                        <div class="row flex-column g-2">
-                                            <template x-for="skill in columns">
-                                                <div class="d-flex align-items-center gap-2">
+                        <div class="d-flex flex-wrap gap-3 opacity-50 pt-2">
+                            <template x-for="skill in skills">
+                                <!-- <div class="col-sm-4"> -->
+                                    <!-- <template x-for="columns in skillz"> -->
+                                        <!-- <div class="row flex-wrap g-2"> -->
+                                            <!-- <template x-for="skill in skillz"> -->
+                                                <span class="d-flex align-items-center pe-2 gap-1 rounded">
                                                     <i x-bind:class="skill.icon"></i>
                                                     <span x-text="skill.title"></span>
-                                                </div>
-                                            </template>
-                                        </div>
-                                    </template>
-                                </div>
+                                                </span>
+                                            <!-- </template> -->
+                                        <!-- </div> -->
+                                    <!-- </template> -->
+                                <!-- </div> -->
                             </template>
                         </div>
                         <!-- end skills  -->
 
                     </div>
                     <div class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="./static/img.png" alt="" height="150px" width="150px" style="border-radius:50%">
+                        <img src="./static/img.png" alt="" height="170px" width="170px" style="border-radius:50%">
                     </div>
                 </div>
             </div>
@@ -254,8 +260,8 @@
        <!-- contact -->
        <section class="py-5 mt-5 px-3">
             <div class="container text-center">
-                <h2 class="fw-bold" style="font-size:3rem">Say hi to John.</h2>
-                <p class="text-muted ms-auto me-auto" style="max-width: 30rem;">I would love to hear from you. Whether it’s a project, a job opportunity, or just a chat. Feel free to contact me.</p>
+                <h2 class="fw-bold" style="font-size:3rem" x-text="section.contact.title"></h2>
+                <p class="text-muted ms-auto me-auto" style="max-width: 30rem;" x-text="section.contact.description"></p>
                 <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Email
                 </button>
