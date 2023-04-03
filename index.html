@@ -1,297 +1,317 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="styles/pico-master/css/pico.min.css">
-    <link rel="stylesheet" href="styles/custom-styles/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"rel="stylesheet">
-
-    <title>John Dc | Portfolio</title> 
+    <title>Portfolio</title>
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-    
+    <link rel="stylesheet" href="./static/vendor/bootstrap/scss/bootstrap-custom.css">
+    <link rel="stylesheet" href="./static/vendor/bootstrap/icons/bootstrap-icons.css">
+
     <style>
-        html {
-            font-family: 'Inter';
-        }
-    
-        .switcher {
-                position: fixed;
-                right: calc(var(--spacing)/ 2 + var(--scrollbar-width, 0px));
-                bottom: var(--spacing);
-                width: auto;
-                margin-bottom: 0;
-                padding: .75rem;
-                border-radius: 2rem;
-                box-shadow: var(--card-box-shadow);
-                line-height: 1;
-                text-align: right
-            }
-    
-            .switcher::after {
-                display: inline-block;
-                width: 1rem;
-                height: 1rem;
-                border: .15rem solid currentColor;
-                border-radius: 50%;
-                background: linear-gradient(to right, currentColor 0, currentColor 50%, transparent 50%);
-                content: "";
-                vertical-align: bottom;
-                transition: transform var(--transition)
-            }
-    
-            .switcher i {
-                display: inline-block;
-                max-width: 0;
-                padding: 0;
-                overflow: hidden;
-                font-style: normal;
-                font-size: .875rem;
-                white-space: nowrap
-            }
-    
-            .switcher:focus,
-            .switcher:hover {
-                max-width: 100%;
-                transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition)
-            }
-    
-            .switcher:hover::after {
-                transform: rotate(180deg)
-            }
-    
-            .switcher:hover i {
-                max-width: 100%;
-                padding: 0 calc(var(--spacing)/ 2) 0 calc(var(--spacing)/ 4);
-                transition: max-width var(--transition), padding var(--transition)
-            }
-    
-            .switcher:focus {
-                box-shadow: var(--card-box-shadow), 0 0 0 .2rem var(--secondary-focus)
-            }
-    
-            @media (min-width:576px) {
-                .switcher {
-                    right: calc(var(--spacing) + var(--scrollbar-width, 0px))
-            }
-        }
-    
-    
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .container { max-width: 61rem; }
     </style>
-</head>
-
-
-
-
-<body>
-    <nav class="container-fluid">
-        <ul>
-            <li><a href="https://johndcjustme.github.io/portfolio/#home" aria-label="Back home">
-                    <b>JD</b>
-                </a>
-            </li>
-        </ul>
-        <ul>
-            <li><a href="https://github.com/johndcjustme/portfolio" class="contrast" aria-label="Pico GitHub repository"><svg
-                        aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 496 512" height="16px">
-                        <path fill="currentColor"
-                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                        </path>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="container">
-
-
-        <section class="section-hero">
-            <div class="text-center">
-                <div class="headings-reversed">
-                    <p><code>Hi there, I am John!</code></p>
-                    <h1>< Web Developer /></h1>
-                </div>
-                <p>Code is my morning Coffee. <a href="">Download CV</a></p>                
-                <br><br>
-            </div>
-        </section>
-
-
-        <section>
-            <div class="headings-reversed text-center"> 
-                <p>A little</p>
-                <h2>About Me</h2>
-            </div>
-            <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus laborum consequatur nemo esse ad voluptatum asperiores explicabo fugit quidem alias deserunt, accusamus quos neque sapiente excepturi. Dolores, libero consequuntur!</p>
-        </section>
-
-
-
-        <section>
-            <div class="headings-reversed text-center"> 
-                <p>Computing</p>
-                <h2>Skills</h2>
-            </div>
-
-            <div class="grid" x-data="computingSkills()">
-                <template x-for="skill in skills">
-                    <ul>
-                        <template x-for="list in skill">
-                            <li><code x-text="list"></code></li>
-                        </template>                          
-                    </ul>
-                </template>
-            </div>
-        </section>
-
-
-
-        <section>
-            <div class="headings-reversed text-center"> 
-                <p>Some of my featured</p>
-                <h2>Projects</h2>
-            </div>
-            <div class="grid" x-data="featuredProjects()">
-                <template x-for="project in projects">
-                    <article style="margin: 1rem 0;">
-                        <hgroup>
-                            <h4 x-text="project.title"></h4>
-                            <p x-text="project.description"></p>
-                        </hgroup>
-                        <a x-bind:href="project.url">View Project</a>
-                    </article>
-                </template>
-            </div>
-        </section>
-
-
-
-
-        <section>
-            <div class="headings-reversed text-center"> 
-                <p>People I work with and</p>
-                <h2>What they say</h2>
-            </div>
-            <div class="grid" x-data="testimonials()">
-                <template x-for="testimonial in testimonials">
-                    <article style="margin: 1rem 0;">
-                        <p x-text="testimonial.testimonial"></p>
-                        <b x-text="testimonial.name"></b><br>
-                        <small x-text="testimonial.title" class="fw-300"></small>
-                    </article>
-                </template>
-            </div>
-        </section>
-
-
-
-        <section class="section-contact">
-            <div class="headings-reversed text-center">
-                <p>Wan't to build a project with me?</p>
-                <h2>Message Me</h2>
-            </div>
-
-            <div class="grid">
-                <div></div>
-                <form>                     
-                    <input type="email" id="email" name="email" placeholder="Email address" required>
-                    <textarea name="" id="message" cols="30" rows="3" placeholder="Your message" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-                <div></div>
-            </div>
-
-            <br>
-
-            <p class="text-center">
-                or reach me in your favoured time <br>
-                <a>johndecastro.604@gmail.com</a> | <a href="">(+63) 09512558697</a>
-            </p>
-
-        </section>        
-    </div>
-
-    <footer class="container">
-        <small>Made and Customized with <a href="https://picocss.com">Pico</a> • <a href="#">Source code</a></small>
-<!--         
-        <div class="text-center">
-            <h5>or contact me anytime.</h5>
-            <svg id="i-mail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                <path d="M2 26 L30 26 30 6 2 6 Z M2 6 L16 16 30 6" />
-            </svg>
-            <p>johndecastro.604@gmail.com</p>
-
-            
-            <svg id="i-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                <path d="M21 2 L11 2 C10 2 9 3 9 4 L9 28 C9 29 10 30 11 30 L21 30 C22 30 23 29 23 28 L23 4 C23 3 22 2 21 2 Z M9 5 L23 5 M9 27 L23 27" />
-            </svg>
-            <p>09484710737</p>
-        </div> -->
-    </footer>
-
-
-    <div class="switcher"></div>
-    <script type="module" src="js/commons.js"></script>
-
 
     <script>
-        computingSkills = () => {
-            return { skills: [
-                [
-                    'HTML 5 | CSS3 | SCSS',
-                ], [
-                    'PHP | Laravel | Livewire', 
-                    'C# | ASP.NET Core', 
-                ], [
-                    'MySQL | SQL Server | SQLite',    
-                ]
-            ]};
-        }
-    
-        featuredProjects = () => {
-            return { projects: [
+        function projects() {
+            return {
+                projects: [
                 {
-                    title: 'Project 1',
-                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-                    url: '#'
-                },  {
-                    title: 'Project 2',
-                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-                    url: '#'
+                    title: 'Optical Clinic Management System with Anaylytics',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere laudantium aliquid illum nisi unde? Eveniet accusamus consectetur.',
+                    repo: 'google.com',
+                    screenshots: [
+                        './static/projects/clinic/dashboard.png',
+                        './static/projects/clinic/patient.png',                                      
+                        './static/projects/clinic/inventory.png'                   
+                    ],
+                    tags: [
+                        'laravel', 'livewire'
+                    ]
                 }, {
-                    title: 'Project 3',
-                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-                    url: '#'
+                    title: 'Content Management System',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere laudantium aliquid illum nisi unde? Eveniet accusamus consectetur quod.',
+                    repo: 'google.com',
+                    screenshots: [
+                        './static/projects/clinic/dashboard.png',
+                        './static/projects/clinic/dashboard.png',
+                        './static/projects/clinic/dashboard.png'
+                    ],
+                    tags: [
+                        'laravel', 'livewire'
+                    ]
+                }, {
+                    title: 'Portfolio',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere laudantium aliquid illum nisi unde? Eveniet accusamus consectetur quod.',
+                    repo: 'google.com',
+                    screenshots: [
+                        './static/projects/portfolio/hero.png',
+                        './static/projects/portfolio/projects.png',
+                        './static/projects/portfolio/about.png'
+                    ],
+                    tags: [
+                        'laravel', 'livewire'
+                    ]
                 }
             ]}
         }
 
-        testimonials = () => {
-            return { testimonials: [
-                {
-                    name: 'John Doe',
-                    title: 'Company CEO',
-                    testimonial: '"Lorem, ipsum dolor sit amet consectetur adipisicing elit."',
-                },  {
-                    name: 'Vhelmar Fernandez',
-                    title: 'Company CEO',
-                    testimonial: '"Lorem, ipsum dolor sit amet consectetur adipisicing elit."',
-                }, {
-                    name: 'Ivan Conrad Jumanoy',
-                    title: 'Company CEO',
-                    testimonial: '"Lorem, ipsum dolor sit amet consectetur adipisicing elit."',
-                }
-            ]}
+        function skills() {
+            return {
+                skills: [
+                    {
+                        column: [
+                            {
+                                icon: 'devicon-html5-plain',
+                                title: 'HTML 5'
+                            }, {
+                                icon: 'devicon-css3-plain',
+                                title: 'CSS 3'
+                            }, {
+                                icon: 'devicon-sass-plain',
+                                title: 'Scss'
+                            },  {
+                                icon: 'devicon-javascript-plain',
+                                title: 'JavaScript'
+                            }
+                        ]
+                    }, {
+                        column: [
+                            {
+                                icon: 'devicon-bootstrap-plain',
+                                title: 'Bootstrap'
+                            }, {
+                                icon: 'devicon-tailwindcss-plain',
+                                title: 'Tailwind'
+                            }, {
+                                icon: 'devicon-jquery-plain',
+                                title: 'JQuery'
+                            },  {
+                                icon: 'devicon-svelte-plain',
+                                title: 'Svelte'
+                            }
+                        ]
+                    }, {
+                        column: [
+                            {
+                                icon: 'devicon-laravel-plain',
+                                title: 'Laravel'
+                            }, {
+                                icon: 'devicon-dotnetcore-plain',
+                                title: '.NET Core'
+                            },{
+                                icon: 'devicon-mysql-plain',
+                                title: 'MySql'
+                            }, {
+                                icon: 'devicon-microsoftsqlserver-plain',
+                                title: 'SQL Server'
+                            }
+                        ]
+                    }
+                ]
+            }
         }
-    
-        
     </script>
+</head>
+<body>
+    <div>
+        <!-- header  -->
+        <div class="position-fixed start-0 end-0 top-0 p-3 bg-body" style="z-index: 3; box-shadow: 0px 10px 15px #212529;">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center gap-3">
+                    <a href="" class="text-decoration-none fw-bold link-secondary">JOHN DE CASTRO</a>
+                    <a href="https://github.com/johndcjustme" target="_blank" class="text-decoration-none link-primary fs-5"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end header  -->
+
+
+        <!-- hero -->
+        <section class="py-5 px-3 vh-100 mb-5">
+          
+            <div class="container d-flex flex-column justify-content-between gap-5 h-100">
+                <div></div>
+                <div>
+                    <div>
+                        <h2><span class="text-muted">Hello there,</span> <span class="text-danger">I'm John.</span></h2>
+                        <h1 class="fw-bold" style="font-size:3.7rem">Web Developer</h1>
+                        <p class="lead text-muted" style="font-size: 1.5rem;">I am a frontend software engineer, currently focused on building beautiful web interfaces and web applications at</p>
+                    </div>
+                    <div class="d-flex gap-4 mt-5">
+                        <a href="#section-projects" class="btn btn-lg btn-primary">Projects <i class="bi bi-arrow-down"></i></a>
+                        <a href="./static/resume_john_de_castro.pdf" target="_blank" class="btn btn-lg btn-outline-primary">Resume</a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <span class="scroll-indicator border"></span>
+                </div>
+            </div>
+       </section>
+        <!-- end hero -->
+
+
+       <!-- projects -->
+       <section id="section-projects" class="pt-5 px-3" x-data="projects()">
+        
+            <div class="container">
+                <h5 class="section-title border-bottom mb-5 pb-3">Projects</h5>
+
+                <template x-for="(project, index) in projects">
+                    <div class="row g-5 mb-5 pb-5">
+                        <div class="col-sm-12 col-md-6">
+                            <div>
+                                <h3 class="fw-bold" x-text="project.title"></h3>
+                                <p class="text-muted" x-text="project.description"></p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-3 my-4">
+                                <template x-for="tag in project.tags">
+                                    <a class="text-muted opacity-50 text-decoration-none" href="#" x-text="'#' + tag"></a>
+                                </template>
+                            </div>
+                            <div>
+                                <a x-bind:href="project.repo" target="_blank" class="link-primary fs-5 text-decoration-none"><i class="bi bi-github"></i> Code repo</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div x-bind:id="'carouselExampleIndicators' + index" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" x-bind:data-bs-target="'#carouselExampleIndicators' + index" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" x-bind:data-bs-target="'#carouselExampleIndicators' + index" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" x-bind:data-bs-target="'#carouselExampleIndicators' + index" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner rounded border">
+                                    <template x-for="screenshot in project.screenshots">
+                                        <div class="carousel-item active">
+                                            <img x-bind:src="screenshot" class="d-block w-100" alt="Screenshot">
+                                        </div>
+                                    </template>
+                                </div>
+                                <button class="carousel-control-prev" type="button" x-bind:data-bs-target="'#carouselExampleIndicators' + index" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" x-bind:data-bs-target="'#carouselExampleIndicators' + index" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+       </section>
+       <!-- end projects -->
+
+
+
+       <!-- about -->
+       <section class="py-5 px-3" x-data="skills()">
+            <div class="container border-bottom pb-5">
+                <h5 class="section-title border-bottom mb-5 pb-3">About Me</h5>
+                <div class="row g-5">
+                    <div class="col-sm-12 col-md-6">
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptas fuga suscipit qui officiis nulla nihil. Ad fugiat similique, eos architecto libero sapiente, doloremque beatae dignissimos pariatur, itaque praesentium obcaecati?</p>
+                        <p class="lead">Technologies that I've been working with.</p>
+
+                        <!-- skills  -->
+                        <div class="row g-4">
+                            <template x-for="skillz in skills">
+                                <div class="col-sm-4">
+                                    <template x-for="columns in skillz">
+                                        <div class="row flex-column g-2">
+                                            <template x-for="skill in columns">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i x-bind:class="skill.icon"></i>
+                                                    <span x-text="skill.title"></span>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+                        <!-- end skills  -->
+
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
+                        <img src="./static/img.png" alt="" height="150px" width="150px" style="border-radius:50%">
+                    </div>
+                </div>
+            </div>
+       </section>
+       <!-- end about -->
+
+
+
+       <!-- contact -->
+       <section class="py-5 mt-5 px-3">
+            <div class="container text-center">
+                <h2 class="fw-bold" style="font-size:3rem">Say hi to John.</h2>
+                <p class="text-muted ms-auto me-auto" style="max-width: 30rem;">I would love to hear from you. Whether it’s a project, a job opportunity, or just a chat. Feel free to contact me.</p>
+                <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Email
+                </button>
+            </div>
+       </section>
+       <!-- end contact -->
+
+
+
+       <!-- footer -->
+       <section class="py-5 px-3 mt-3">
+            <div class="container d-flex flex-column justify-content-center align-items-center gap-2">
+                <a href="https://github.com/johndcjustme/portfolio" target="_blank" class="fs-5 link-primary"><i class="bi bi-github"></i></a>
+                <p class="opacity-50">Built and designed by John De Castro</p>
+            </div>
+       </section>
+       <!-- end footer -->
+
+    </div>
+
+
+    <!-- get in touch modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="btn-close position-absolute end-0 top-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body m-4">
+                    <h4>Get in touch</h4>
+                    <form action="" class="row g-3 mt-3">
+                        <div class="col-12">
+                            <label for="" class="form-label text-muted">Your Name</label>
+                            <input type="text" class="form-control" placeholder="John Doe">
+                        </div>
+                        <div class="col-12">
+                            <label for="" class="form-label text-muted">Email</label>
+                            <input type="email" class="form-control" placeholder="johndoe@email.com">
+                        </div>
+                        <div class="col-12">
+                            <label for="" class="form-label text-muted">Message</label>
+                            <textarea name="" class="form-control" id="" rows="4"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 mt-2">Send</button>
+                        </div>
+                        <div class="col-12 text-center pt-3">
+                            <span class="text-muted pe-1">or use this <i class="bi bi-arrow-right"></i></span> <b>johndcjustme@gmail.com</b>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal  -->
+
+
+
+    <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
