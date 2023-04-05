@@ -257,18 +257,10 @@
                         <!-- skills  -->
                         <div class="d-flex flex-wrap gap-3 opacity-50 pt-2">
                             <template x-for="skill in skills">
-                                <!-- <div class="col-sm-4"> -->
-                                    <!-- <template x-for="columns in skillz"> -->
-                                        <!-- <div class="row flex-wrap g-2"> -->
-                                            <!-- <template x-for="skill in skillz"> -->
-                                                <span class="d-flex align-items-center pe-2 gap-1 rounded">
-                                                    <i x-bind:class="skill.icon"></i>
-                                                    <span x-text="skill.title"></span>
-                                                </span>
-                                            <!-- </template> -->
-                                        <!-- </div> -->
-                                    <!-- </template> -->
-                                <!-- </div> -->
+                                <span class="d-flex align-items-center pe-2 gap-1 rounded">
+                                    <i x-bind:class="skill.icon"></i>
+                                    <span x-text="skill.title"></span>
+                                </span>
                             </template>
                         </div>
                         <!-- end skills  -->
