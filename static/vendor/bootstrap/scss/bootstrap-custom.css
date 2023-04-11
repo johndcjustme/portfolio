@@ -8649,4 +8649,18 @@ textarea.form-control-lg {
     opacity: 0%;
     top: 0;
   }
+}
+.with-transition {
+  animation-name: animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=bootstrap-custom.css.map */

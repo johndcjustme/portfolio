@@ -8,8 +8,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="./static/favicon.png">
     <title>Portfolio</title>
 
-    <script defer src="./static/vendor/alphine/alphinev3.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> -->
+    <link rel="stylesheet" href="./static/vendor/devicon/devicon.css">
 
     <link rel="stylesheet" href="./static/vendor/bootstrap/scss/bootstrap-custom.css">
     <link rel="stylesheet" href="./static/vendor/bootstrap/icons/bootstrap-icons.css">
@@ -132,7 +132,7 @@
         <div class="position-fixed start-0 end-0 top-0 p-3 bg-body" style="z-index: 3; box-shadow: 0px 10px 15px #212529;">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center gap-3">
-                    <a href="" class="text-decoration-none fw-bold link-secondary">JOHN DE CASTRO</a>
+                    <a href="/" class="text-decoration-none fw-bold link-secondary">JOHN DE CASTRO</a>
                     <a href="https://github.com/johndcjustme" target="_blank" class="text-decoration-none link-primary fs-5"><i class="bi bi-github"></i></a>
                 </div>
             </div>
@@ -145,12 +145,12 @@
             <div class="container d-flex flex-column justify-content-between gap-5 h-100">
                 <div></div>
                 <div>
-                    <div>
+                    <div class="with-transition">
                         <h2><span class="text-muted" x-html="section.hero.greeting"></h2>
                         <h1 class="fw-bold" style="font-size:3.7rem" x-text="section.hero.career"></h1>
                         <p class="lead text-muted" style="font-size: 1.5rem;" x-html="section.hero.description"></p>
                     </div>
-                    <div class="d-flex gap-4 mt-5">
+                    <div class="with-transition d-flex gap-4 mt-5">
                         <a href="#section-projects" class="btn btn-lg btn-primary">Projects <i class="bi bi-arrow-down"></i></a>
                         <a href="./static/resume_john_de_castro.pdf" target="_blank" class="btn btn-lg btn-outline-primary">Resume</a>
                     </div>
@@ -232,7 +232,7 @@
                         <!-- skills  -->
                         <div class="d-flex flex-wrap gap-3 opacity-50 pt-2">
                             <template x-for="skill in skills">
-                                <span class="d-flex align-items-center pe-2 gap-1 rounded">
+                                <span class="d-flex align-items-center pe-2 gap-1">
                                     <i x-bind:class="skill.icon"></i>
                                     <span x-text="skill.title"></span>
                                 </span>
@@ -311,7 +311,7 @@
     <!-- end modal  -->
 
 
-
+    <script defer src="./static/vendor/alphine/alphinev3.js"></script>
     <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
