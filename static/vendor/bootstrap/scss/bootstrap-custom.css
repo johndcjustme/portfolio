@@ -8611,6 +8611,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.container {
+  max-width: 61rem;
+}
+
 .carousel:hover {
   transform: scale(1.02);
   transition: 0.2s ease-in-out;
@@ -8636,7 +8640,6 @@ textarea.form-control-lg {
 
 @keyframes slide-up {
   0% {
-    /* color: red; */
     bottom: 0;
     opacity: 100%;
   }
@@ -8645,7 +8648,6 @@ textarea.form-control-lg {
     bottom: 60%;
   }
   100% {
-    /* color: yellow; */
     opacity: 0%;
     top: 0;
   }

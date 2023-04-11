@@ -52,7 +52,9 @@
 // scss-docs-end import-stack
 
 
-
+.container {
+    max-width: 61rem;
+}
 .carousel:hover {
     transform: scale(1.02);
     transition: 0.2s ease-in-out;
@@ -79,7 +81,6 @@
 
 @keyframes slide-up {
     0% {
-        /* color: red; */
         bottom: 0;
         opacity: 100%;
     }
@@ -88,7 +89,6 @@
         bottom: 60%;
     }
     100% {
-        /* color: yellow; */
         opacity: 0%;
         top: 0;
     }
