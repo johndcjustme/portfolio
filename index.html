@@ -147,7 +147,7 @@
                     <div class="with-transition">
                         <h2><span class="text-muted" x-html="section.hero.greeting"></h2>
                         <h1 class="fw-bold" style="font-size:3.7rem" x-text="section.hero.career"></h1>
-                        <p class="lead text-muted" style="font-size: 1.5rem;" x-html="section.hero.description"></p>
+                        <p class="lead text-muted" style="font-size: 1.3rem;" x-html="section.hero.description"></p>
                     </div>
                     <div class="with-transition d-flex gap-4 mt-5">
                         <a href="#section-projects" class="btn btn-lg btn-primary">Projects <i class="bi bi-arrow-down"></i></a>
@@ -194,8 +194,8 @@
                                     <button type="button" x-bind:data-bs-target="'#carouselExampleIndicators' + index" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                 </div>
                                 <div class="carousel-inner rounded border">
-                                    <template x-for="screenshot in project.screenshots">
-                                        <div class="carousel-item active">
+                                    <template x-for="(screenshot, screenshot_index) in project.screenshots">
+                                        <div class="carousel-item" x-bind:class="screenshot_index == 0 ? 'active' : ''">
                                             <img x-bind:src="screenshot" class="d-block w-100" alt="Screenshot">
                                         </div>
                                     </template>
