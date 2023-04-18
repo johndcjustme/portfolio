@@ -1,3 +1,3 @@
 # portfolio
-See my website here
-https://johndcjustme.github.io/portfolio/#home
+See my portfolio here
+https://johndcjustme.github.io/portfolio/
